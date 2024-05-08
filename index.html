@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КТ5 JS DOM</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body class="bg-dark">
+    <div class="container mt-5">
+        <div class="row text-light">
+            <div class="col-md-6">
+                <form id="cardForm">
+                    <div class="form-group">
+                        <label for="bankName">Название банка:</label>
+                        <select class="form-control" id="bankName" required>
+                            <option value="" disabled selected>Не выбрано</option>
+                            <option value="images/sber.png">СберБанк</option>
+                            <option value="images/tinkoff.png">Тинькофф</option>
+                            <option value="images/vtb.jpg">ВТБ</option>
+                            <option value="images/alfa.jpg">Альфа-банк</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Номер карты:</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 1234 5678" maxlength="19" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardHolder">Имя держателя карты:</label>
+                        <input type="text" class="form-control" id="cardHolder" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="expiryMonth">Месяц окончания:</label>
+                            <input type="number" class="form-control" id="expiryMonth" min="1" max="12" required>
+                        </div>
+                        <div class="col">
+                            <label for="expiryYear">Год окончания:</label>
+                            <input type="number" class="form-control" id="expiryYear" min="24" max="50" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="paymentSystem">Тип платежной системы:</label>
+                        <select class="form-control" id="paymentSystem" required>
+                            <option value="" disabled selected>Не выбрано</option>
+                            <option value="images/visa.jpg">Visa</option>
+                            <option value="images/mastercard.png">MasterCard</option>
+                            <option value="images/mir.png">Мир</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Добавить карту</button>
+                </form>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="card">
+                    <div class="card-body text-dark">
+                        <img id="bankLogo" src="" alt="Bank Logo">
+                        <h1 class="card-subtitle mb-2 mt-2" id="previewCardNumber"></h1>
+                        <div class="d-flex d-inline-flex mt-4">
+                            <h3 class="card-text mr-5" id="previewCardHolder"></h3>
+                            <h3 class="card-text mr-5" id="previewExpiryDate"></h3>
+                            <img id="paymentSystemLogo" src="" alt="Payment System Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-striped mt-5 text-light text-center align-middle" id="cardData">
+            <thead>
+                <tr>
+                    <th>Банк</th>
+                    <th>Платежная система</th>
+                    <th>Номер карты</th>
+                    <th>Имя держателя</th>
+                    <th>Дата окончания</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
