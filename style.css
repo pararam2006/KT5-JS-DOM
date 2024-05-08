@@ -1,8 +1,12 @@
+#paymentSystemLogo {
+    height: 50px;
+}
+
 #bankLogo {
     height: 100px;
     border-radius: 50%;
 }
-
-#paymentSystemLogo {
-    height: 50px;
+input {
+    background-color: #dcdcdc;
 }
+
